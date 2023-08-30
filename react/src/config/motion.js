@@ -38,7 +38,7 @@ export const fadeAnimation = {
 };
 
 export const headTextAnimation = {
-  initial: { x: 100, opacity: 0 },
+  initial: { x: 100, opacity: 0 }, 
   animate: { x: 0, opacity: 1 },
   transition: {
     type: "spring",
@@ -64,7 +64,7 @@ export const headContentAnimation = {
 };
 
 export const headContainerAnimation = {
-  initial: { x: -100, opacity: 0, transition: { ...transition, delay: 0.5 } },
+  initial: { x: -100, opacity: 0, transition: { ...transition, delay: 0.8 } },
   animate: { x: 0, opacity: 1, transition: { ...transition, delay: 0 } },
   exit: { x: -100, opacity: 0, transition: { ...transition, delay: 0 } },
 };

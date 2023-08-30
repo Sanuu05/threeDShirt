@@ -9,9 +9,11 @@ const Shirt = () => {
     const {nodes,materials} = useGLTF('/shirt_baked.glb')
     const logoTexture = useTexture(snap.logoDecal)
     const fullTexture = useTexture(snap.fullDecal)
-    useFrame((state, delta) => easing.dampC(materials.lambert1.color, snap.color, 0.25, delta));
+    console.log({nodes,materials})
+    useFrame((state, delta) => easing.dampC(materials.lambert1.color, snap.color, 0.5, delta));
 
     const stateString = JSON.stringify(snap);
+    console.log('sccs',materials.lambert1,snap.color)
   return (
     <group key={stateString}>
         <mesh castShadow geometry={nodes.T_Shirt_male.geometry}
@@ -22,16 +24,16 @@ const Shirt = () => {
           <Decal 
             position={[0, 0, 0]}
             rotation={[0, 0, 0]}
-            scale={1}
+            scale={0.05}
             map={fullTexture}
           />
         )}
 
         {snap.isLogoTexture && (
           <Decal 
-            position={[0, 0.08, 0.15]}
+            position={[0, 0.05, 0.10]}
             rotation={[0, 0, 0]}
-            scale={0.15}
+            scale={0.18}
             map={logoTexture}
             map-anisotropy={16}
             depthTest={false}
